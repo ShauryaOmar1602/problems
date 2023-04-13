@@ -1,0 +1,10 @@
+ def nextGreaterLeft(arr,n):   
+   res= [] 
+   for i in range(0, n): 
+     for j in range(i-1, -1, -1): 
+       if arr[i] < arr[j]: 
+         res.append(arr[j]) 
+         break 
+     else: 
+       res.append(-1) 
+   return res
