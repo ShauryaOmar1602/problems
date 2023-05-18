@@ -1,0 +1,31 @@
+class Solution:
+    def search(self,pat, txt):
+        n=len(txt)
+        k=len(pat)
+        d={}
+        for i in pat:
+            if i in d:
+                d[i]+=1
+            else:
+                d[i]=1
+        i=0
+        j=0
+        c=len(d)
+        ans=0
+        while(j<n):
+            if txt[j] in d:
+                d[txt[j]]-=1
+                if (d[txt[j]]==0):
+                    c-=1
+            if(j-i+1)<k:
+                j+=1
+            elif(j-i+1)==k:
+                if c==0:
+                    ans+=1
+                if txt[i] in d:
+                    d[txt[i]]+=1
+                    if(d[txt[i]]==1):
+                        c+=1
+                i+=1
+                j+=1
+        print(ans)
