@@ -1,0 +1,8 @@
+def fun(arr,i,n):
+    if(i>=n):
+        return
+    print(arr[i])
+    fun(arr,i+1,n)
+arr=[2,5,7,9,3]
+n=len(arr)
+fun(arr,0,n)
